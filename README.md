@@ -1,91 +1,145 @@
-# InternCircle Data Science & AI — Task 1: Titanic EDA
+# InternCircle Data Science & AI Internship
 
-**Intern:** Tina Devi  
-**InternCircle ID:** IC-2026-1286  
-**Track:** Data Science & AI  
-**Task:** Exploratory Data Analysis (EDA) on the Titanic Dataset
+This repository contains my completed InternCircle Data Science & AI internship tasks, including exploratory data analysis, data visualization, and customer sales/churn analysis.
 
-## Project objective
+## Tasks Completed
 
-This project performs exploratory data analysis on the classic Titanic passenger dataset using **Python and Pandas**.
+### Task 1 — Exploratory Data Analysis (EDA) on Titanic
 
-The analysis covers:
-- `head()`, `info()`, and `describe()`
-- Dataset shape and column inspection
-- Missing-value analysis
+Notebook:
+`notebooks/Titanic_EDA_Task_1.ipynb`
+
+Main work:
+- Dataset inspection using `head()`, `info()`, and `describe()`
+- Shape and column analysis
+- Missing-value analysis and treatment
 - Duplicate-row checking
-- Missing-value treatment
 - Survival-rate calculations
 - Grouping and aggregation
 - Survival analysis by gender and passenger class
 - Age-group and family-size analysis
-- Basic Matplotlib visualizations
+- Basic visualizations
 - Written conclusions and statistical insights
 
-## Repository structure
+Dataset:
+`data/titanic.csv`
+
+### Task 2 — Data Visualization with Matplotlib & Seaborn
+
+Notebook:
+`notebooks/Titanic_Visualization_Task_2.ipynb`
+
+Main work:
+- Histograms and distribution analysis
+- Box plots
+- Correlation matrix / heatmap
+- Count plots
+- Matplotlib and Seaborn visualizations
+- Interpretation of charts and relationships in the Titanic dataset
+
+### Task 3 — Customer Churn / Sales Trend Analysis
+
+Notebook:
+`notebooks/Customer_Churn_Sales_Analysis.ipynb`
+
+Main work:
+- End-to-end e-commerce sales analysis
+- Data cleaning and validation
+- Date extraction and feature engineering
+- Revenue calculation
+- Monthly revenue trends and month-over-month growth
+- Pivot-table analysis
+- Top products by revenue
+- RFM-style customer segmentation
+- Customer inactivity analysis as a churn-risk proxy
+- Revenue analysis by customer segment and country
+- Actionable business recommendations
+
+Dataset:
+UCI Machine Learning Repository — Online Retail Dataset.
+
+The notebook loads the dataset programmatically with `ucimlrepo`, so the large raw Excel file does not need to be stored inside this GitHub repository.
+
+> Note: The Online Retail dataset does not contain a direct churn label. Task 3 therefore uses customer inactivity (recency greater than 90 days) as an analytical churn-risk proxy rather than claiming a true churn prediction model.
+
+## Repository Structure
 
 ```text
-interncircle-data-science-ai/
+interncircle-data-science-aii/
 │
 ├── data/
 │   └── titanic.csv
 │
 ├── notebooks/
-│   └── Titanic_EDA_Task_1.ipynb
+│   ├── Titanic_EDA_Task_1.ipynb
+│   ├── Titanic_Visualization_Task_2.ipynb
+│   └── Customer_Churn_Sales_Analysis.ipynb
 │
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
 
-## Dataset
+## Tools & Technologies
 
-The included `data/titanic.csv` contains **891 passenger records and 12 columns**, including:
-`PassengerId`, `Survived`, `Pclass`, `Name`, `Sex`, `Age`, `SibSp`, `Parch`, `Ticket`, `Fare`, `Cabin`, and `Embarked`.
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+- UCI ML Repository (`ucimlrepo`)
+- OpenPyXL
 
-## How to run
+## How to Run
 
-### Option 1 — Google Colab
-1. Upload this repository to GitHub.
-2. Open `notebooks/Titanic_EDA_Task_1.ipynb` in Google Colab.
-3. Run all cells from top to bottom.
+### Google Colab
 
-### Option 2 — Local Jupyter Notebook
+1. Open the required notebook in Google Colab.
+2. For Task 1 and Task 2, make sure the repository data path is available when running the notebook.
+3. For Task 3, install the required packages if needed:
+
+```python
+!pip install -r requirements.txt
+```
+
+or:
+
+```python
+!pip install ucimlrepo openpyxl
+```
+
+4. Run the notebook cells from top to bottom.
+
+### Local Jupyter
+
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Start Jupyter:
+
+```bash
 jupyter notebook
 ```
 
-Then open:
+Then open the required notebook from the `notebooks/` folder.
 
-```text
-notebooks/Titanic_EDA_Task_1.ipynb
-```
+## Dataset Sources
 
-## Main cleaning decisions
+### Titanic Dataset
+The Titanic dataset is stored locally in `data/titanic.csv` and is used by Tasks 1 and 2.
 
-- Missing `Age` values → replaced with the median age.
-- Missing `Embarked` values → replaced with the mode.
-- Missing `Cabin` values → labelled as `Unknown`.
-- Exact duplicate rows → checked and removed if present.
+### Online Retail Dataset
+Task 3 uses the UCI Machine Learning Repository Online Retail dataset:
 
-## Important findings
+Daqing Chen. (2015). *Online Retail*. UCI Machine Learning Repository.  
+DOI: https://doi.org/10.24432/C5BW33
 
-The notebook calculates the exact survival rates directly from the dataset. It examines:
-- overall survival;
-- survival by gender;
-- survival by passenger class;
-- survival by age group;
-- survival by family size;
-- average age, fare, and family size by survival outcome.
+The dataset is retrieved through the `ucimlrepo` Python package.
 
-## Skills demonstrated
+## Skills Demonstrated
 
-**Python • Pandas • NumPy • Matplotlib • Exploratory Data Analysis • Data Cleaning • Data Aggregation • Statistical Interpretation**
-
----
-
-### Internship submission
-
-This repository is prepared for **InternCircle Data Science & AI — Task 1: Exploratory Data Analysis (EDA) on Titanic**.
+Python • Pandas • NumPy • Matplotlib • Seaborn • Data Cleaning • Exploratory Data Analysis • Data Visualization • Feature Engineering • Pivot Tables • Trend Analysis • Customer Segmentation • RFM Analysis • Business Intelligence • Analytical Problem Solving
